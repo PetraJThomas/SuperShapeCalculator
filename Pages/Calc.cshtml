@@ -1,0 +1,66 @@
+﻿@page
+@model SuperShapeCalculator.Pages.CalcModel
+@{
+}
+
+<style>
+
+.start-over-button
+{
+    display: inline-block;
+}
+
+</style>
+
+<div class="container">
+    <div class="results-container">
+        <div class="formula">
+            <input type="hidden" id="shape" name="shape" asp-for="Shape">
+            <input type="hidden" id="area" name="area" asp-for="Area">
+            @if (Model.Shape == "circle")
+            {
+                <div id="circle"></div>
+                <div>&nbsp;&nbsp;</div>
+                <h1 class="display-5">&#402; (&#8511<span>@Model.Radius</span><sup>2</sup>)</h1>
+            }
+
+            @if (Model.Shape == "square")
+            {
+                <div id="square"></div>
+                <div>&nbsp;&nbsp;</div>
+                <h1 class="display-5">&#402; <b>@Model.vBase</b> x <b>@Model.vHeight</b></h1>
+            }
+
+            @if (Model.Shape == "triangle")
+            {
+                <div id="up-triangle"></div>
+                <div>&nbsp;&nbsp;</div>
+                <h1 class="display-5">&#402; <b>@Model.vBase</b> x <b>@Model.vHeight</b> / 2</h1>
+            }
+
+            @if (Model.Shape == "pentagon")
+            {
+                <div id="pentagon"></div>
+                <div>&nbsp;&nbsp;</div>
+                <h1 class="display-5">&#402; (1/4 x sqrt(5 x 5 + 2 x sqrt(5)) x <b>@Model.vSide</b><sup>2</sup>)</h1>
+            }
+        </div>
+        @if (@Model.Area != "Undefined...")
+        {
+            <div class="result">Area = @Model.Area cm<sup>2</sup></div>
+        }
+
+        @if (@Model.Area == "Undefined...")
+        {
+            <div class="result">Area = @Model.Area</div>
+        }
+
+
+        
+        <form method="post">
+            <div class="submit-button mt-5">
+                <button class="btn btn-primary" type="submit">Start Over</button>
+            </div>
+        </form>
+    </div>
+</div>

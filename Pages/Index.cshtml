@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container text-center">
+    <h1 class="display-5">Pick a shape to calculate the Area!</h1>
+    <form method="post">
+        <div class="row s-container">
+            <div class="sc1">
+                <div id="circle"></div>
+                <input type="radio" name="shape" id="SCircle" value="circle">
+                <label for="SCircle"></label>
+            </div>
+            <div class="st2">
+                <div id="up-triangle"></div>
+                <input type="radio" name="shape" id="STriangle" value="triangle">
+                <label for="STriangle"></label>
+            </div>
+            <div class="sq3">
+                <div id="square"></div>
+                <input type="radio" name="shape" id="SSquare" value="square">
+                <label for="SSquare"></label>
+            </div>
+            <div class="sp4">
+                <div id="pentagon"></div>
+                <input type="radio" name="shape" id="SPentagon" value="pentagon">
+                <label for="SPentagon"></label>
+            </div>
+        </div>
+        <div class="submit-button">
+            <button class="btn btn-primary" type="submit">Next</button>
+        </div>
+    </form>
+</div>
+

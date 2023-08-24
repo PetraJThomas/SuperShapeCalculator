@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SuperShapeCalculator</title>
+    <link rel="stylesheet" href="~/css/site.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="shape-container">
+                <div class="shape-logo">
+                    <img src="~/assets/shape logo.svg"/>
+                </div>
+                <a href="#" class="navbar-brand">Super Shape Calculator</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+            @RenderBody()
+    </div>
+
+    <footer class="footer text-center">
+        <div class="container">
+            &copy; PetraJT @DateTime.Now.Year
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
